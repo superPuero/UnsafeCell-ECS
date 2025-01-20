@@ -12,11 +12,7 @@ impl<'a> Entity<'a> {
 
         Entity{
             id: new_id,
-            transform:  {
-                let l = ctx.get_mut::<i32>(new_id).unwrap();
-                println!("GOT {:#?}", l);
-                l
-            }
+            transform: ctx.get_mut_uncheked::<i32>(new_id)
         }
 
     }
